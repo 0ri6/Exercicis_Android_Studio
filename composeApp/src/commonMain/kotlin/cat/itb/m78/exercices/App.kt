@@ -9,9 +9,10 @@ import cat.itb.m78.exercices.ExState.gambling
 import cat.itb.m78.exercices.ExStateless.Contact
 import cat.itb.m78.exercices.ExStateless.Resource
 import cat.itb.m78.exercices.ExStateless.Welcome
+import cat.itb.m78.exercices.ExViewModel.CounterStrike
 import cat.itb.m78.exercices.theme.AppTheme
 
 @Composable
 internal fun App() = AppTheme {
-gambling()
+CounterStrike()
 }

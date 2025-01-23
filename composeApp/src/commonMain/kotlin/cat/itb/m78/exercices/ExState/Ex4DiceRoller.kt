@@ -7,11 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Refresh
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -38,135 +34,162 @@ import org.jetbrains.compose.resources.painterResource
 import kotlin.random.Random
 
 @Composable
-fun gambling(){
-    Image(painter = painterResource(Res.drawable.tapestry),
-          modifier = Modifier.fillMaxSize(),
-          contentDescription = null,
-          contentScale = ContentScale.FillBounds)
+fun gambling() {
 
-val randomnumber1 = mutableStateOf(Random.nextInt(1,7))
-val randomnumber2 = mutableStateOf(Random.nextInt(1,7))
 
-    Column (modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center) {
+    val randomnumber1 = mutableStateOf(Random.nextInt(1, 7))
+    val randomnumber2 = mutableStateOf(Random.nextInt(1, 7))
+    val scope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
 
+
+    Scaffold(
+        snackbarHost = {
+            SnackbarHost(hostState = snackbarHostState)
+        },
+    )
+    { padding ->
         Image(
-            painter = painterResource(Res.drawable.title),
-            modifier = Modifier.size(250.dp),
+            painter = painterResource(Res.drawable.tapestry),
+            modifier = Modifier.fillMaxSize(),
             contentDescription = null,
+            contentScale = ContentScale.FillBounds
         )
-        val scope = rememberCoroutineScope()
-        val snackbarHostState = remember { SnackbarHostState() }
-        Scaffold(
-            snackbarHost = {
-                SnackbarHost(hostState = snackbarHostState)
-            },
-        ){ padding ->
+
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        )
+        {
+
+            Image(
+                painter = painterResource(Res.drawable.title),
+                modifier = Modifier.size(250.dp),
+                contentDescription = null,
+            )
+
             Button(modifier = Modifier.padding(padding), onClick = {
-                randomnumber1.value = Random.nextInt(1,7)
+                randomnumber1.value = Random.nextInt(1, 7)
+                randomnumber2.value = Random.nextInt(1, 7)
                 scope.launch {
-                    snackbarHostState.showSnackbar("Hello!")
+                    if (randomnumber1.value == 6 && randomnumber2.value == 6) {
+                        snackbarHostState.showSnackbar("JACKPOT!!")
+                    }
                 }
-            }){
+            }) {
                 Text("ROLL THE DICE!!")
             }
-        }
-
-        }
-        if (randomnumber1.value == 6 && randomnumber2.value == 6){
-            Text("JACKPOT!!!")
-        }
 
 
-        Row {
+            Row {
 
-            if (randomnumber1.value == 1) {
-                pedo1()
-            } else {
-                if (randomnumber1.value == 2) {
-                    pedo2()
+                if (randomnumber1.value == 1) {
+                    pedo1()
                 } else {
-                    if (randomnumber1.value == 3) {
-                        pedo3()
+                    if (randomnumber1.value == 2) {
+                        pedo2()
                     } else {
-                        if (randomnumber1.value == 4) {
-                            pedo4()
+                        if (randomnumber1.value == 3) {
+                            pedo3()
                         } else {
-                            if (randomnumber1.value == 5) {
-                                pedo5()
+                            if (randomnumber1.value == 4) {
+                                pedo4()
                             } else {
-                                if (randomnumber1.value == 6) {
-                                    pedo6()
+                                if (randomnumber1.value == 5) {
+                                    pedo5()
+                                } else {
+                                    if (randomnumber1.value == 6) {
+                                        pedo6()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (randomnumber2.value == 1) {
+                    pedo1()
+                } else {
+                    if (randomnumber2.value == 2) {
+                        pedo2()
+                    } else {
+                        if (randomnumber2.value == 3) {
+                            pedo3()
+                        } else {
+                            if (randomnumber2.value == 4) {
+                                pedo4()
+                            } else {
+                                if (randomnumber2.value == 5) {
+                                    pedo5()
+                                } else {
+                                    if (randomnumber2.value == 6) {
+                                        pedo6()
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-
-            if (randomnumber2.value == 1) {
-                pedo1()
-            } else {
-                if (randomnumber2.value == 2) {
-                    pedo2()
-                } else {
-                    if (randomnumber2.value == 3) {
-                        pedo3()
-                    } else {
-                        if (randomnumber2.value == 4) {
-                            pedo4()
-                        } else {
-                            if (randomnumber2.value == 5) {
-                                pedo5()
-                            } else {
-                                if (randomnumber2.value == 6) {
-                                    pedo6()
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
+
     }
+
+
 }
 
 
+@Composable
+fun pedo1() {
+    Image(
+        painter = painterResource(Res.drawable.dice_1),
+        modifier = Modifier.size(200.dp),
+        contentDescription = null,
+    )
+}
 
 @Composable
-fun pedo1(){
-    Image(painter = painterResource(Res.drawable.dice_1),
+fun pedo2() {
+    Image(
+        painter = painterResource(Res.drawable.dice_2),
         modifier = Modifier.size(200.dp),
         contentDescription = null,
-    )}
+    )
+}
+
 @Composable
-fun pedo2(){
-    Image(painter = painterResource(Res.drawable.dice_2),
+fun pedo3() {
+    Image(
+        painter = painterResource(Res.drawable.dice_3),
         modifier = Modifier.size(200.dp),
         contentDescription = null,
-    )}
+    )
+}
+
 @Composable
-fun pedo3(){
-    Image(painter = painterResource(Res.drawable.dice_3),
+fun pedo4() {
+    Image(
+        painter = painterResource(Res.drawable.dice_4),
         modifier = Modifier.size(200.dp),
         contentDescription = null,
-    )}
+    )
+}
+
 @Composable
-fun pedo4(){
-    Image(painter = painterResource(Res.drawable.dice_4),
+fun pedo5() {
+    Image(
+        painter = painterResource(Res.drawable.dice_5),
         modifier = Modifier.size(200.dp),
         contentDescription = null,
-    )}
+    )
+}
+
 @Composable
-fun pedo5(){
-    Image(painter = painterResource(Res.drawable.dice_5),
+fun pedo6() {
+    Image(
+        painter = painterResource(Res.drawable.dice_6),
         modifier = Modifier.size(200.dp),
         contentDescription = null,
-    )}
-@Composable
-fun pedo6(){
-    Image(painter = painterResource(Res.drawable.dice_6),
-        modifier = Modifier.size(200.dp),
-        contentDescription = null,
-    )}
+    )
+}
