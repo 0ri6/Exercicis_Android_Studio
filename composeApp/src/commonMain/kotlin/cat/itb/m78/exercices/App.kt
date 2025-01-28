@@ -10,9 +10,11 @@ import cat.itb.m78.exercices.ExStateless.Contact
 import cat.itb.m78.exercices.ExStateless.Resource
 import cat.itb.m78.exercices.ExStateless.Welcome
 import cat.itb.m78.exercices.ExViewModel.CounterStrike
+import cat.itb.m78.exercices.Navigation.ManualNav
+import cat.itb.m78.exercices.Navigation.Screen1
 import cat.itb.m78.exercices.theme.AppTheme
 
 @Composable
 internal fun App() = AppTheme {
-CounterStrike()
+ManualNav()
 }
