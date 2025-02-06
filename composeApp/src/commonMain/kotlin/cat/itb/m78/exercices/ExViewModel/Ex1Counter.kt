@@ -22,6 +22,8 @@ import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun CounterStrike() {
+    val viewModel = viewModel { CSViewModel() }
+
     Image(
         painter = painterResource(Res.drawable.background_color),
         modifier = Modifier.fillMaxSize(),
@@ -34,7 +36,7 @@ fun CounterStrike() {
         verticalArrangement = Arrangement.Center
     ) {
 
-        val viewModel = viewModel { CSViewModel() }
+
         Row {
             Column {
                 Text(viewModel.num1.value.toString())

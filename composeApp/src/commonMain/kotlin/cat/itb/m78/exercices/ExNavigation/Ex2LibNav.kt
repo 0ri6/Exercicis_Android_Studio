@@ -1,5 +1,5 @@
 package cat.itb.m78.exercices.ExNavigation
-
+/*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -109,4 +109,4 @@ fun LibNavScreenSample() {
             ScreenN3(message)
         }
     }
-}
+}*/
