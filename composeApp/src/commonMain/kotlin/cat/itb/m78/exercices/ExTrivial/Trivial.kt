@@ -177,7 +177,7 @@ fun Quiz(navigateToAnswer: (Int) -> Unit) {
         Pregunta("Quina és la data de llançament de la primera Nintendo Entertainment System (NES)?", listOf("1983", "1990", "1985", "1979"), 0),
         Pregunta("Quin és el nom del creador de Minecraft?", listOf("Notch","Herobrine","John Carmack","Markus Persson"), 3),
         Pregunta("Quina d’aquestes targetes gràfiques és de la marca Nvidia?", listOf("Radeon", "Geforce", "Intel HD Graphics", "Vega"), 1),
-        Pregunta("Quina és la màxima resolució d'alguns monitors 4K?", listOf("1920x1080", "3840x2160", "2560x1440", "1280x720"), 1),
+        Pregunta("Quina és la màxima resolució d'alguns monitors 4K?", listOf("1920x1080", "3840x2160", "2560x1440","1280x720"), 1),
         Pregunta("Quin joc va ser desenvolupat per Blizzard Entertainment i és conegut per la seva batalla en línia entre herois?", listOf("World of Warcraft", "Overwatch", "Starcraft", "Diablo"), 1),
         Pregunta("Quin joc és el pitjor optimitzat de tots?", listOf("Ark", "Garten of Banban", "The Last of Us", "Cities: Skylines 2", "Totes són correctes"), 4),
         Pregunta("Quin és el joc més venut del món?", listOf("Tetris", "Minecraft", "GTA (Grand Thief Auto)", "Wii Sports"), 0),
