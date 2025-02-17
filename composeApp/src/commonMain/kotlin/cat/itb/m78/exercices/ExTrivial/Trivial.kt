@@ -59,18 +59,7 @@ fun Trivial(navigateToSettings: () -> Unit, navigateToGame: () -> Unit) {
     }
 }
 
-@Composable
-fun Settings(navigateToMenu: () -> Unit) {
-    Column {
-        Row {
-            Text("ERROR 404")
-            Button(onClick = { navigateToMenu()} ){
-                Text("Menú")
-            }
-        }
 
-    }
-}
 
 
 //@Composable
@@ -261,6 +250,7 @@ fun Quiz(navigateToAnswer: (Int) -> Unit) {
         }
     }
 }
+
 @Composable
 fun Answer(respostesCorrectes: Int, navigateToMenu: () -> Unit) {
     val totalPreguntes = 15
@@ -272,6 +262,30 @@ fun Answer(respostesCorrectes: Int, navigateToMenu: () -> Unit) {
     ) {
         Text(
             "Respostes correctes: $respostesCorrectes/$totalPreguntes",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center
+        )
+
+        Spacer(Modifier.height(20.dp))
+
+        Button(onClick = { navigateToMenu() }) {
+            Text("Tornar al menú")
+        }
+    }
+}
+
+@Composable
+fun Settings(navigateToMenu: () -> Unit) {
+    val totalPreguntes = 15
+
+    Column(
+        modifier = Modifier.fillMaxSize().background(Color.Green),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            "Respostes correctes:",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center
