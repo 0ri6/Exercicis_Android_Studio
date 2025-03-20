@@ -55,6 +55,21 @@ kotlin {
             implementation(libs.androidx.navigation.composee)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.kotlinx.datetime)
+            implementation("com.russhwolf:multiplatform-settings-no-arg:1.3.0")
+            implementation("com.russhwolf:multiplatform-settings-serialization:1.3.0")
+            implementation("io.ktor:ktor-client-core:3.0.2")
+            implementation("io.ktor:ktor-client-cio:3.0.2")
+            implementation("io.ktor:ktor-client-content-negotiation:3.0.2")
+            implementation("io.ktor:ktor-serialization-kotlinx-json:3.0.2")
+
+            implementation("io.ktor:ktor-client-core:2.2.3") // Versión de Ktor (ajusta según lo último disponible)
+            implementation("io.ktor:ktor-client-cio:2.2.3")  // El motor que estás usando, en este caso CIO
+            implementation("io.ktor:ktor-client-content-negotiation:2.2.3") // Para negociación de contenido
+            implementation("io.ktor:ktor-serialization-kotlinx-json:2.2.3") // Para serialización de JSON con Kotlin
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0") // Versión de Kotlinx Serialization
+
+            implementation("io.coil-kt.coil3:coil-compose:3.1.0")
+            implementation("io.coil-kt.coil3:coil-network-ktor3:3.1.0")
         }
 
         commonTest.dependencies {
@@ -102,6 +117,7 @@ android {
 
 //https://developer.android.com/develop/ui/compose/testing#setup
 dependencies {
+    implementation(libs.androidx.ui.android)
     androidTestImplementation(libs.androidx.uitest.junit4)
     debugImplementation(libs.androidx.uitest.testManifest)
 }
