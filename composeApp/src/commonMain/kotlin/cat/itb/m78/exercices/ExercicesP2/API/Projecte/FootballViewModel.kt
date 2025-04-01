@@ -6,12 +6,12 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FCBViewModel : ViewModel(){
-    val fcb = mutableStateOf<List<Barca>?>(null)
+class FootballViewModel : ViewModel(){
+    val fcb = mutableStateOf<teams?>(null)
 
     init {
         viewModelScope.launch(Dispatchers.Default) {
-            fcb.value = FCBApi().listFCB()
+            fcb.value = FootballApi.listFootball()//listFCB
         }
     }
 }
