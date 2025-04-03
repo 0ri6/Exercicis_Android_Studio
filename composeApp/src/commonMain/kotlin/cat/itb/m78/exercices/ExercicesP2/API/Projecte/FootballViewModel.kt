@@ -9,9 +9,10 @@ import kotlinx.coroutines.launch
 class FootballViewModel : ViewModel(){
     val fcb = mutableStateOf<teams?>(null)
 
+
     init {
         viewModelScope.launch(Dispatchers.Default) {
-            fcb.value = FootballApi.listFootball()//listFCB
+            fcb.value = FootballApi.listFootball()
         }
     }
 }
