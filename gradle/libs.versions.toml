@@ -15,6 +15,10 @@ kotlinx-datetime = "0.6.1"
 hotreload = "1.0.0-dev.32.1"
 uiAndroid = "1.7.8"
 startupRuntime = "1.2.0"
+cameraCore = "1.4.2"
+lifecycleCommonJvm = "2.8.7"
+compiler = "3.2.0-alpha11"
+cameraLifecycle = "1.4.2"
 
 [libraries]
 
@@ -42,6 +46,10 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
 androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime", version.ref = "startupRuntime" }
+androidx-camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraCore" }
+androidx-lifecycle-common-jvm = { group = "androidx.lifecycle", name = "lifecycle-common-jvm", version.ref = "lifecycleCommonJvm" }
+androidx-compiler = { group = "androidx.databinding", name = "compiler", version.ref = "compiler" }
+androidx-camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraLifecycle" }
 
 [plugins]
 

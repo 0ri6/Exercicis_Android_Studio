@@ -89,6 +89,15 @@ kotlin {
             implementation(libs.kotlinx.coroutines.android)
             implementation(libs.ktor.client.okhttp)
             implementation("app.cash.sqldelight:android-driver:2.0.2")
+            implementation("androidx.camera:camera-core:1.5.0-alpha06")
+            implementation("androidx.camera:camera-camera2:1.5.0-alpha06")
+            implementation("androidx.camera:camera-compose:1.5.0-alpha06")
+            implementation("androidx.camera:camera-lifecycle:1.5.0-alpha06")
+            implementation("androidx.camera:camera-extensions:1.5.0-alpha06")
+
+            implementation("com.google.accompanist:accompanist-permissions:0.37.2")
+            implementation(libs.androidx.startup.runtime)
+
 
         }
 
@@ -126,12 +135,16 @@ android {
 }
 
 //https://developer.android.com/develop/ui/compose/testing#setup
-dependencies {
-    implementation(libs.androidx.ui.android)
-    implementation(libs.androidx.startup.runtime)
-    androidTestImplementation(libs.androidx.uitest.junit4)
-    debugImplementation(libs.androidx.uitest.testManifest)
-}
+//dependencies {
+//    implementation(libs.androidx.ui.android)
+//    implementation(libs.androidx.startup.runtime)
+//    implementation(libs.androidx.camera.core)
+//    implementation(libs.androidx.lifecycle.common.jvm)
+//    implementation(libs.androidx.compiler)
+//    implementation(libs.androidx.camera.lifecycle)
+//    androidTestImplementation(libs.androidx.uitest.junit4)
+//    debugImplementation(libs.androidx.uitest.testManifest)
+//}
 
 compose.desktop {
     application {
